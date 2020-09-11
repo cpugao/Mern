@@ -4,7 +4,7 @@ const Input = (props) => {
     const { list, setList } = props
 
         let task= {
-            naem:"",
+            name:"",
             isComplete: false,
         };
 
