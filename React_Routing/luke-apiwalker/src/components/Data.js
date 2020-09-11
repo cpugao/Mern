@@ -36,7 +36,28 @@ const Data = (props) => {
             </>    
         )
     }
-
+    else if (resource === 'species') {
+        return (
+            <>
+                <h2>{data.name}</h2>
+                <p>Classification: {data.classification}</p>
+                <p>Language: {data.language}</p>
+                <p>Designation: {data.designation}</p>
+                <p>Average Lifespan: {data.average_lifespan}</p>
+            </>    
+        )
+    }
+    else if (resource === 'starships') {
+        return (
+            <>
+                <h2>{data.name}</h2>
+                <p>Manufacturer: {data.manufacturer}</p>
+                <p>Crew: {data.crew}</p>
+                <p>Model: {data.model}</p>
+                <p>Hyperdrive Rating: {data.hyperdrive_rating}</p>
+            </>    
+        )
+    }
 }
 
 export default Data;

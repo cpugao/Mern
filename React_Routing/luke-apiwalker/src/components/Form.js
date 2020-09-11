@@ -25,6 +25,8 @@ const Form = (props) => {
             <select name="resource" onChange={resourceChange}>
                 <option value="people" selected={inputs.resource == 'people'}>People</option>
                 <option value="planets" selected={inputs.resource == 'planets'}>Planets</option>
+                <option value="species" selected={inputs.resource == 'species'}>Species</option>
+                <option value="starships" selected={inputs.resource == 'pstarships'}>Starships</option>
             </select>
             <label htmlFor="id">ID: </label>
             <input type="number" name="id" onChange={idChange} value={inputs.id} /> 
