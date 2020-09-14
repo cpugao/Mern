@@ -1,0 +1,23 @@
+> db.students.find({home_state: "California"}).pretty()
+{
+        "_id" : ObjectId("5f5df4cd6b53153496a0cdb0"),
+        "name" : "Rex",
+        "home_state" : "California",
+        "lucky_number" : 1,
+        "birthday" : {
+                "month" : 8,
+                "day" : 24,
+                "year" : 2000
+        }
+}
+{
+        "_id" : ObjectId("5f5df5036b53153496a0cdb1"),
+        "name" : "Jonathan",
+        "home_state" : "California",
+        "lucky_number" : 2,
+        "birthday" : {
+                "month" : 7,
+                "day" : 1,
+                "year" : 1999
+        }
+}

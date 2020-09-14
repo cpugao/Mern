@@ -1,0 +1,42 @@
+> db.students.update({}, {$set: {updated_on:0 }}, {multi:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("5f5df5886b53153496a0cdb3"),
+        "name" : "Carlo",
+        "home_state" : "Texas",
+        "birthday" : {
+                "month" : 12,
+                "day" : 19,
+                "year" : 1978
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "weightlifting"
+        ],
+        "belts_earned" : 1,
+        "updated_on" : 0
+}
+> db.students.update({}, {$currentDate: {updated_on: true}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("5f5df5886b53153496a0cdb3"),
+        "name" : "Carlo",
+        "home_state" : "Texas",
+        "birthday" : {
+                "month" : 12,
+                "day" : 19,
+                "year" : 1978
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "weightlifting"
+        ],
+        "belts_earned" : 1,
+        "updated_on" : ISODate("2020-09-13T20:20:40.288Z")
+}

@@ -1,0 +1,34 @@
+> db.students.find({lucky_number: {$gt: 3}}).pretty()
+{
+        "_id" : ObjectId("5f5df5586b53153496a0cdb2"),
+        "name" : "Alexandra",
+        "home_state" : "Texas",
+        "lucky_number" : 6,
+        "birthday" : {
+                "month" : 10,
+                "day" : 4,
+                "year" : 1994
+        }
+}
+{
+        "_id" : ObjectId("5f5df5886b53153496a0cdb3"),
+        "name" : "Carlo",
+        "home_state" : "Texas",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 12,
+                "day" : 19,
+                "year" : 1978
+        }
+}
+{
+        "_id" : ObjectId("5f5df5be6b53153496a0cdb4"),
+        "name" : "Romeo",
+        "home_state" : "New Mexico",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 10,
+                "day" : 24,
+                "year" : 1983
+        }
+}

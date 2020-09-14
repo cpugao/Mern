@@ -1,0 +1,20 @@
+> db.students.update({},{$unset: {lucky_number:''}}, true)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("5f5df5886b53153496a0cdb3"),
+        "name" : "Carlo",
+        "home_state" : "Texas",
+        "birthday" : {
+                "month" : 12,
+                "day" : 19,
+                "year" : 1978
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "weightlifting"
+        ],
+        "belts_earned" : 1
+}

@@ -1,0 +1,20 @@
+> db.students.update({name: "Romeo"}, {$push: {interests: "taxes"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find({name: "Romeo"}).pretty()
+{
+        "_id" : ObjectId("5f5df5be6b53153496a0cdb4"),
+        "name" : "Romeo",
+        "home_state" : "New Mexico",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 10,
+                "day" : 24,
+                "year" : 1983
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "taxes"
+        ]
+}
