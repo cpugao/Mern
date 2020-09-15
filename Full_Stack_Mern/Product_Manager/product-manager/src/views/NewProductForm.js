@@ -2,20 +2,26 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 
-const NewProductForm = props => {
+const NewProductForm = (props) => {
+    const {products, setProducts} = props;
+    // const [products, setProducts] = useState([]);
+
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
 
     const onSubmitHandler = e => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/products/create', {
+
+        const newProduct = {
             title,
             price,
             description
-        })
-            .then(res=>console.log("Response: ", res))
-            .catch(err=>console.log("Error: ", err))
+        }
+        axios.post('http://localhost:8000/api/products/create', newProduct)
+        .then(res => setProducts([...products, res.data]))
+        .catch(err => console.log(err));
+
     }
 
     return (

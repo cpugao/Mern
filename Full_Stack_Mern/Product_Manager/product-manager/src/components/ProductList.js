@@ -4,7 +4,8 @@ import { Link } from '@reach/router';
 
 
 const ProductList = (props) => {
-    const [products, setProducts] = useState([]);
+    const {products, setProducts} = props;
+    // const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/products")
