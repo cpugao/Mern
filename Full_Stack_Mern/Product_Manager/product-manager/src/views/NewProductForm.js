@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import ProductList from '../components/ProductList';
 
 
 const NewProductForm = (props) => {
@@ -42,6 +43,8 @@ const NewProductForm = (props) => {
                 </p>
                 <input type="submit" />
             </form>
+            <br></br>
+            <ProductList products={products} setProducts={setProducts} />
         </div>
     )
 }
