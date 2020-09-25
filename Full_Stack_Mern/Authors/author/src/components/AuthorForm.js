@@ -5,9 +5,9 @@ import { navigate, Link } from '@reach/router';
 
 
 const AuthorForm = (props) => {
-    const [ name, setName ] = useState("");
-    const [ authors, setAuthors ] = useState([]);
-    
+    const [name, setName] = useState("");
+    const [errors, setErrors] = useState(null);
+
     const onSubmitHandler = e => {
         e.preventDefault();
 
@@ -15,9 +15,13 @@ const AuthorForm = (props) => {
             name,
         }
         axios.post('http://localhost:8000/api/authors/create', newAuthor)
-        .then(res => navigate("/"))
-        .catch(err => console.log(err));
-
+            .then((res) => { 
+                navigate("/");
+            })
+            .catch((err) => {
+                console.log(err.response);
+                setErrors(err.response.data.errors);
+            });
     }
 
     return (
@@ -28,6 +32,8 @@ const AuthorForm = (props) => {
                 <p>
                     <label>Name: </label>
                     <input type="text" onChange={(e) => setName(e.target.value)} />
+                    {errors?.name && (
+                        <span style={{ color: "red" }}>{errors?.name?.message}</span>)}
                 </p>
                 <input type="submit" />
             </form>

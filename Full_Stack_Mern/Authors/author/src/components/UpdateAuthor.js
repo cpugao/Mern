@@ -5,6 +5,7 @@ import { Link, navigate } from '@reach/router';
 const UpdateAuthor = (props) => {
 
     const [ name, setName ] = useState("");
+    const [ errors, setErrors ] =useState(null);
     
 
     useEffect(() => {
@@ -25,7 +26,8 @@ const UpdateAuthor = (props) => {
             navigate("/");
         })
         .catch((err) => {
-            console.log(err)
+            console.log(err.response);
+            setErrors(err.response.data.errors);
         })
     }
 
@@ -37,6 +39,8 @@ const UpdateAuthor = (props) => {
                 <p>
                     <label>Name </label>
                     <input onChange={(e) => setName(e.target.value)} type="text" value={name} />
+                    {errors?.name && (
+                        <span style={{ color: "red" }}>{errors?.name?.message}</span>)}
                 </p>
                 <input type="submit" value="Update" />
             </form>

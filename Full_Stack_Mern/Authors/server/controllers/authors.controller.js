@@ -7,7 +7,7 @@ module.exports = {
                 res.json(author);
             })
             .catch((err) =>{
-                res.json(err);
+                res.status(400).json(err);
             })
     },
     getAll(req, res) {
@@ -48,7 +48,7 @@ module.exports = {
             res.json(author);
         })
         .catch((err) => {
-            res.json(err);
+            res.status(400).json(err);
         });
     },
 };
